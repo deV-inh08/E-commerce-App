@@ -75,6 +75,7 @@ import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 
 import { Assets } from '../@types/Assets.type'
+import { Products } from '../@types/Product.type'
 
 export const assets: Assets = {
     logo,
@@ -97,7 +98,7 @@ export const assets: Assets = {
     cross_icon
 }
 
-export const products = [
+export const products: Products[] = [
     {
         _id: "aaaaa",
         name: "Women Round Neck Cotton Top",

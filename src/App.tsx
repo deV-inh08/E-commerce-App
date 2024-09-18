@@ -10,13 +10,11 @@ import Login from './pages/Login'
 import PlaceOrder from './pages/PlaceOrder'
 import Orders from './pages/Orders'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
 function App() {
   return (
     <>
       <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
         <Navbar></Navbar>
-        <Hero></Hero>
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/collection' element={<Collection/>}></Route>
@@ -33,4 +31,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
