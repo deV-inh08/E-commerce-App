@@ -6,7 +6,9 @@ import {NavLink, Link} from "react-router-dom"
   const [visible, setVisible] = useState<boolean>(false);
   return (
     <div className='flex items-center justify-between py-5 font-medium'>
-        <img src={assets.logo} alt="logo" />
+        <Link to="/">
+          <img src={assets.logo} alt="logo" />
+        </Link>
         <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
             <NavLink to='/' className="flex flex-col items-center gap-1">
               <p>Home</p>
