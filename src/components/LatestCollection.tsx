@@ -19,7 +19,6 @@ const LatestCollection = () => {
             setLatestProduct(context.products.slice(0, 10))
         }
     }, [context])
-
      // check if context not ready => return Loading...
      if(!context) {
         return(

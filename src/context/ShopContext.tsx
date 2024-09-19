@@ -7,25 +7,31 @@ type ShopContextProvider = {
     children: React.ReactNode;
 };
 
+// 
+interface Search {
+    search: string;
+    setSearch: (value: string) => void;
+    showSearch: boolean;
+    setShowSearch: (value: boolean) => void;
+};
+
 // Khai báo 1 type cho value => truyền null vào createContext(null) nhưng thực tế ta cần 1 Object "value" => Khai báo type
-type ShopContextType = {
+interface ShopContextType extends Search {
     products: Products[];
     currency: string;
     delivery_fee: number;
-} | null;
+};
 
-export const ShopContext = createContext<ShopContextType>(null);
+export const ShopContext = createContext<ShopContextType | null>(null);
 
 const ShopContextProvider = ({children}: ShopContextProvider) => {
     const currency = "$";
     const delivery_fee = 10;
     const [search, setSearch] = useState<string>("");
-    const [showSearch, setShowSearch] = useState<boolean>(true);
+    const [showSearch, setShowSearch] = useState<boolean>(false);
 
     const value = {
-        products, currency ,delivery_fee,
-        search, setSearch,
-        showSearch, setShowSearch,
+        products, currency ,delivery_fee, search, setSearch, showSearch, setShowSearch,
     }
     return (
         <ShopContext.Provider value={value}>
