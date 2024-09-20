@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   if(!context) {
     throw new Error("Not context")
   };
-  const {setShowSearch} = context;
+  const {setShowSearch, showSearch} = context;  
   return(
     <div className="flex items-center justify-between py-5 font-medium">
       <Link to="/">
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
       >
         <div className="flex flex-col text-gray-600">
           <div
-            onClick={() => setVisible(false)}
+            onClick={() => setVisible(!showSearch)}
             className="flex items-center gap-4 p-3"
           >
             <img

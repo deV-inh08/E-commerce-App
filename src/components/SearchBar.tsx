@@ -2,7 +2,6 @@ import React, { useContext, useEffect , useState} from 'react'
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets';
 import { useLocation } from 'react-router-dom';
-import { ShopContextType } from '../@types/ShopContext.type';
 
 const SearchBar = () => {
   const [visible, setVisible] = useState<boolean>(false);
@@ -11,7 +10,7 @@ const SearchBar = () => {
     throw new Error("Not Context")
   };
 
-  let {search, showSearch, setSearch, setShowSearch} = context;
+  let {search, showSearch, setSearch, setShowSearch} = context;  
   
   // useLocation is a hook of react-router-dom. Access information {pathname: '/', search: '', hash: '', state: null, key: 'lthdhvhc'}
   const location = useLocation();
@@ -21,7 +20,7 @@ const SearchBar = () => {
     } else {
       setVisible(false)
     }
-  }, [location]);
+  }, [location, showSearch]);
   
   return showSearch && visible ? (
     <div className='border-t border-b bg-gray-50 text-center'>
