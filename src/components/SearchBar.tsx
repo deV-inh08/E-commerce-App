@@ -10,7 +10,7 @@ const SearchBar = () => {
     throw new Error("Not Context")
   };
 
-  let {search, showSearch, setSearch, setShowSearch} = context;  
+  const {search, showSearch, setSearch, setShowSearch} = context;  
   
   // useLocation is a hook of react-router-dom. Access information {pathname: '/', search: '', hash: '', state: null, key: 'lthdhvhc'}
   const location = useLocation();

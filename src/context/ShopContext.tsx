@@ -22,7 +22,7 @@ interface ShopContextType extends Search {
     delivery_fee: number;
 };
 
-export const ShopContext = createContext<ShopContextType | null>(null);
+export const ShopContext = createContext<ShopContextType>({});
 
 const ShopContextProvider = ({children}: ShopContextProvider) => {
     const currency = "$";
