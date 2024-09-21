@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   if(!context) {
     throw new Error("Not context")
   };
-  const {setShowSearch, showSearch} = context;  
+  const {setShowSearch, showSearch, getCartCount} = context;  
   return(
     <div className="flex items-center justify-between py-5 font-medium">
       <Link to="/">
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
             className="w-5 cursor-pointer"
           />
           <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-md">
-            10
+            {getCartCount()}
           </p>
         </Link>
         <img

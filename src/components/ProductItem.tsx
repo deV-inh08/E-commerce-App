@@ -17,7 +17,6 @@ const ProductItem = ({id, image, name, price}: ProductItemProps) => {
         )
     };
     const {currency} = context;
-    console.log(currency);
     return (
         <Link to={`/product/${id}`}>
             <div className='overflow-hidden'>
